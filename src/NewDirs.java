@@ -19,23 +19,25 @@ public class NewDirs {
 	}
 	
 	public static void main(String[] args) {
-		String path = "F:\\newyear1";
+		String path = "F:\\newyear2";
 		String[] titles = {
-				"Director Beijing",
-				"Manager Beijing",
-				"CEO Beijing",
-				"Chairman Beijing"
+				"北京CEO",
+				"不动产北京",
+				"北京建筑",
+				"Beijing office",
+				"Beijing branch",
+				"Investments Beijing",
 		};
 		String[] emails = {
 				"126",
 				"163",
+				"139",
 				"qq",
-				"gmail",
-				"yahoo",
+				"hotmail",
 				"sohu",
 				"sina",
-				"139",
-				"me",
+				"gmail",
+				"yahoo",
 		};
 		newDirs(path, titles, emails);
 	}

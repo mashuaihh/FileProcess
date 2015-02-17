@@ -117,34 +117,38 @@ public class ProcessHtml {
 	
 	public static void main(String[] args) throws  MalformedURLException, IOException {
 		String[] titles = {
-				"Director Beijing",
-				"Manager Beijing",
-				"CEO Beijing",
-				"Chairman Beijing"
+				"北京CEO",
+				"不动产北京",
+				"北京建筑",
+				"Beijing office",
+				"Beijing branch",
+				"Investments Beijing",
 		};
 		String[] emails = {
 				"126",
 				"163",
+				"139",
 				"qq",
-				"gmail",
-				"yahoo",
+				"hotmail",
 				"sohu",
 				"sina",
-				"139",
-				"me",
+				"gmail",
+				"yahoo",
 		};
-//		del("F:\\newyear1\\Director Beijing\\163");
+
 //		for (int i = 0; i < titles.length; i++) {
 //			for (int j = 0; j < emails.length; j++) {
-////				String path = "F:\\复件 newyear1" + "\\" + titles[i] + "\\" + emails[j];
-//				String a = "F:\\复件 newyear1";
+//				String path = "F:\\newyear2" + "\\" + titles[i] + "\\" + emails[j];
+//				String a = "F:\\newyear2";
 //				String b = a + "\\" + titles[i] + "\\" + emails[j];
-//				doDir(b, a);
-////				processDir(path);
-////				del(path);
+//				doDir(b, a); //3rd step, copy all txt. -> parent dir
+
+//				processDir(path); //1st step, htm -> text
+//				del(path); //2nd step, del all dirs containing css...
 //			}
 //		}
-		File dir = new File("F:\\复件 newyear1");
+		
+		File dir = new File("F:\\newyear2");
 		File[] ds = dir.listFiles();
 		for (int z = 0; z < ds.length; z++) {
 			if (!ds[z].isDirectory())
