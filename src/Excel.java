@@ -55,7 +55,7 @@ public class Excel {
 	}
 	
 	public static void main(String[] args) throws FileNotFoundException {
-		File file = new File("D:\\endResult.txt");//把去重后的txt file object放进 fileToExcel，即在同目录生成excel文件。
-		fileToExcel(file);
+//		File file = new File("D:\\endResult.txt");//把去重后的txt file object放进 fileToExcel，即在同目录生成excel文件。
+//		fileToExcel(file);
 	}
 }
