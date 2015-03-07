@@ -1,12 +1,19 @@
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.MalformedURLException;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -115,31 +122,45 @@ public class ProcessHtml {
 		System.out.println("Finished ");
 	}
 	
+	public static void removeDuplicate(File file) {
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(file));
+			Set<String> lines = new HashSet<String>(10000);
+			String line;
+			while ((line = reader.readLine()) != null) {
+				lines.add(line);
+			}
+			reader.close();
+			BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+			for (String unique : lines) {
+				writer.write(unique);
+				writer.newLine();
+			}
+			writer.close();
+			System.out.println("Duplicate : " + file.getName());
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public static void main(String[] args) throws  MalformedURLException, IOException {
-		String[] titles = {
-				"北京CEO",
-				"不动产北京",
-				"北京建筑",
-				"Beijing office",
-				"Beijing branch",
-				"Investments Beijing",
-		};
-		String[] emails = {
-				"126",
-				"163",
-				"139",
-				"qq",
-				"hotmail",
-				"sohu",
-				"sina",
-				"gmail",
-				"yahoo",
-		};
+
+//		String[] titles = {
+//				"Michael",
+//		};
+//		String[] emails = {
+//				"all.com",
+//				
+//		};
 
 //		for (int i = 0; i < titles.length; i++) {
 //			for (int j = 0; j < emails.length; j++) {
-//				String path = "F:\\newyear2" + "\\" + titles[i] + "\\" + emails[j];
-//				String a = "F:\\newyear2";
+//				String a = "F:\\newyear4";
+//				String path = a + "\\" + titles[i] + "\\" + emails[j];
 //				String b = a + "\\" + titles[i] + "\\" + emails[j];
 //				doDir(b, a); //3rd step, copy all txt. -> parent dir
 
@@ -148,12 +169,16 @@ public class ProcessHtml {
 //			}
 //		}
 		
-		File dir = new File("F:\\newyear2");
-		File[] ds = dir.listFiles();
-		for (int z = 0; z < ds.length; z++) {
-			if (!ds[z].isDirectory())
-				regex(ds[z]);
-		}		
+		
+		String dir = "F:\\newyear4\\Success\\excel";
+		File Dir = new File(dir);
+		File[] list = Dir.listFiles();
+		for (int i = 0; i < list.length; i++) {
+//			removeDuplicate(list[i]);
+			
+		}
+
+
 	}
 	
 }

@@ -33,11 +33,11 @@ public class NewEmail {
 		}
 		
 		for (int i = 0; i < titleList.size(); i++) {
-			for (int j = 0; j < mailList.size(); j++) {
-				String newline = titleList.get(i) + " @" + mailList.get(j);
+			
+				String newline = titleList.get(i) + " " + "Real Estate" + " Email";
 				System.out.println("Creating " + newline);
 				outWrite.println(newline);
-			}
+			//Michael ¡°Real Estate¡± Email
 			outWrite.println();
 		}
 		

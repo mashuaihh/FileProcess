@@ -18,6 +18,7 @@ public class Split {
 	}
 	
 	public void showSplitter(String regex) throws IOException {
+		//To print the delimiter and to see whether the delimiters are the right ones.
 			Scanner in = new Scanner(this.txt, "UTF-8");
 			while (in.hasNextLine()) {
 				String each = in.nextLine();
@@ -29,6 +30,7 @@ public class Split {
 	}
 	
 	public void cutSplit(String regex) throws FileNotFoundException {
+		//To make new txt files(excerpts) in the same directory of the target file.
 		Scanner in = new Scanner(this.txt, "UTF-8");
 		outFile = new File(this.getPath());
 		out = new PrintWriter(outFile);
@@ -62,9 +64,11 @@ public class Split {
 	
 	
 	public static void main(String[] args) throws IOException {
-		String path = "E:\\电子书\\Mars\\mars.txt";
+		String path = "E:\\电子书\\7habits\\Seven.txt";
 		Split ss = new Split(path);
-		ss.cutSplit("(Chapter  [0-9][0-9]?|Chapter  [0-9][0-9]     )");
+//		ss.cutSplit("(Chapter  [0-9][0-9]?|Chapter  [0-9][0-9]     )");
+		String re = "^Habit [0-9]:.*";
+		ss.cutSplit(re);
 		//UTF-8不知为何有超级多 空格字符，但使用\\s和直接打  空格无法匹配。
 		//将txt中的空格字符直接粘贴进入程序中，会提示编码问题
 		//按提示存为UTF-8后，匹配成功。

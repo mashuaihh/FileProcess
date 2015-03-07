@@ -34,7 +34,7 @@ public class Excel {
 	    }
 	    
 	    String parentDir = txtFile.getParent();
-	    String newLocation = parentDir + cutFilename(txtFile) + ".xls";
+	    String newLocation = parentDir + "\\" + cutFilename(txtFile) + ".xls";
 	    FileOutputStream fileOut = new FileOutputStream(newLocation);
 		try {
 			
@@ -54,8 +54,32 @@ public class Excel {
 		return newName;
 	}
 	
+	public static String[] processKey(String keyword) {
+		//input: " key   word  "
+		//output: String[] = {"key", "word"}
+		String cleanKey = keyword.trim();
+//		cleanKey = cleanKey.replaceAll("\\s+", " ");
+		String delimiter = "[ ]+";
+		String[] parts = cleanKey.split(delimiter);
+		return parts;
+	}
+	
 	public static void main(String[] args) throws FileNotFoundException {
 //		File file = new File("D:\\endResult.txt");//把去重后的txt file object放进 fileToExcel，即在同目录生成excel文件。
+//		File dir = new File("F:\\newyear3\\新建文件夹");
+//		File[] files = dir.listFiles();
+//		for (int i = 0; i < files.length; i++) {
+//			System.out.println("Excel " + files[i].getName());
+//			fileToExcel(files[i]);
+//		}
 //		fileToExcel(file);
+		String dir = "F:\\newyear4\\Success\\excel";
+		File Dir = new File(dir);
+		File[] list = Dir.listFiles();
+		for (int i = 0; i < list.length; i++) {
+//			removeDuplicate(list[i]);
+			fileToExcel(list[i]);
+		}
 	}
+
 }
