@@ -51,10 +51,65 @@ public class NewEmail {
 		 String mail = "D:\\mail.txt";
 		 String out = "D:\\endResult.txt";
 		 
-		 try {
-			make(title, mail, out);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+//		 try {
+//			make(title, mail, out);
+//		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+//		}
+		 
+		String[] tit = {
+				"\"Development Corporation\" Beijing Email",
+				"\"A Subsidiary of\" Beijing Email",
+				"\"Market Development\" Beijing Email",
+				"\"International Design\" Beijing Email",
+				"\"Building Materials Co.Ltd\" Beijing Email",
+				"\"Beijing Representative Office\" Beijing Email",
+				"\"WINE & SPIRIT\" Beijing Email",
+				"\"Overseas Bank\" Beijing Email",
+				"\"Investment And Consulting\" Beijing Email",
+				"\"Media Group\" Beijing Email",
+				"\"Architectural Design\" Beijing Email",
+				"\"ADVERSTING & MEDIA\" Beijing Email",
+				"\"HOLDINGS LIMITED\" Beijing Email",
+				"\"Securities Co.Limited\" Beijing Email",
+				"\"business council\" Beijing Email",
+				"\"Landscape Design\" Beijing Email",
+				"\"Asset Management Co.,Ltd\" Beijing Email",
+				"\"management Consulting\" Beijing Email",
+				"\"Wealth Advisory\" Beijing Email",
+				"Yacht Club: Beijing Email",
+				"Studio Beijing Email",
+				"\"EQUITY INVESTMENT\" Beijing Email",
+				"\"FUND MANAGEMENT\" Beijing Email",
+				"\"CHIEF REPRESENTATIVE\" Beijing Email",
+				"\"DEPUTY GENERAL MANAGER\" Beijing Email",
+				"\"COUNTRY MANAGER\" Beijing Email",
+				"\"Assistant to GM\" Beijing Email",
+				"\"ASIA BUSINESS DIRECTOR\" Beijing Email",
+				"\"Interior consultant\" Beijing Email",
+				"\"Assistant to CHAIRMAN\" Beijing Email",
+				"\"Communication Director\" Beijing Email",
+				"\"HEAD OF INVESTMENT\" Beijing Email",
+				"\"VICE CHAIRMAN\" Beijing Email",
+				"\"Chief Editor\" Beijing Email",
+				"\"Brand Manager\" Beijing Email",
+		};
+		String[] mail2 = {
+				"126.com",
+				"qq.com",
+				"vip.sina.com",
+				"yahoo.com",
+				"163.com",
+				"139.com",
+//				"hotmail.com",
+//				"gmail.com",
+		};
+		for (int i = 0; i < tit.length; i++) {
+			for (int j = 0; j < mail2.length; j++) {
+				String newline = tit[i] + " @ " + mail2[j];
+				System.out.println(newline);
+			}
+			System.out.println();
 		}
 		 
 	}

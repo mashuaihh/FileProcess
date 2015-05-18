@@ -74,6 +74,7 @@ public class ProcessHtml {
 		String fileName = b.substring(0, inx);
 		String xinFile = file.getParent() + "\\" + fileName +  "1.txt";
 		File to = new File(xinFile);
+//		Scanner input = new Scanner(file, "UTF-8");
 		Scanner input = new Scanner(file);
 		PrintWriter output = new PrintWriter(to);
 		while (input.hasNextLine()) {
@@ -111,7 +112,8 @@ public class ProcessHtml {
 	
 	public static void doDir(String dir, String target) throws IOException {
 		File ddir = new File(dir);
-		String name = ddir.getParentFile().getName();
+//		String name = ddir.getParentFile().getName();
+		String name = ddir.getName();
 		File[] files = ddir.listFiles();
 		for (int i = 0; i < files.length; i++) {
 			String to = target + "\\" + name + ".txt";
@@ -149,9 +151,35 @@ public class ProcessHtml {
 	
 	public static void main(String[] args) throws  MalformedURLException, IOException {
 
-//		String[] titles = {
-//				"Michael",
-//		};
+		String[] titles = {
+				"Account Manager",
+				"Advertising Director",
+				"Bill",
+				"China Representative",
+				"Christine",
+				"Daniel",
+				"David",
+				"Deborah",
+				"Emiline",
+				"Eric",
+				"Frederic",
+				"George",
+				"Giuseppe",
+				"Helen",
+				"Isabelle",
+				"Jack",
+				"Laura",
+				"Maxime",
+				"Neil",
+				"Nicolas",
+				"Olivier",
+				"Philip",
+				"Santos",
+				"Shelly",
+				"Simon",
+				"Tony",
+				"Vivian",
+		};
 //		String[] emails = {
 //				"all.com",
 //				
@@ -169,13 +197,26 @@ public class ProcessHtml {
 //			}
 //		}
 		
+//		for (int i = 0; i < titles.length; i++) {
+//			String a = "F:\\newyear5";
+//			String b = a + "\\" + titles[i];
+//			doDir(b, a);
+//		}
 		
-		String dir = "F:\\newyear4\\Success\\excel";
-		File Dir = new File(dir);
+//		String dir = "F:\\newyear6";
+//		File did = new File(dir);
+//		File[] files = did.listFiles();
+//		for (int i = 0; i < files.length; i++) {
+//			if (!files[i].isDirectory())
+//				regex(files[i]);
+//		}
+		
+		
+		String dirr = "F:\\newyear6\\new";
+		File Dir = new File(dirr);
 		File[] list = Dir.listFiles();
 		for (int i = 0; i < list.length; i++) {
-//			removeDuplicate(list[i]);
-			
+			removeDuplicate(list[i]);
 		}
 
 

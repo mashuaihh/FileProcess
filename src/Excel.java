@@ -73,7 +73,7 @@ public class Excel {
 //			fileToExcel(files[i]);
 //		}
 //		fileToExcel(file);
-		String dir = "F:\\newyear4\\Success\\excel";
+		String dir = "F:\\newyear6\\new";
 		File Dir = new File(dir);
 		File[] list = Dir.listFiles();
 		for (int i = 0; i < list.length; i++) {
